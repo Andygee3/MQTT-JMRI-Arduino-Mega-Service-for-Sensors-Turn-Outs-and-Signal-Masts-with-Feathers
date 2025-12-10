@@ -1,0 +1,2 @@
+# MQTT-JMRI-Arduino-Mega-Service-for-Sensors-Turn-Outs-and-Signal-Masts-with-Feathers
+A project which setups up multiple Arduino Mega's to send and receive MQTT messages from JMRI to set Turnouts using slow motion turn outs,  send sensor feedback and set signals both heads via turn outs and signal masts.  The boards use JMRI Memory Variables to setup each board sending JSON objects for each item so only the board ID needs to be set.
