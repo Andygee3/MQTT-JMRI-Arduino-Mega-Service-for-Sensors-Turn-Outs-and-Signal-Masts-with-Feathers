@@ -79,27 +79,28 @@ JMRI drives signals and turnouts directly via MQTT topics
 Arduino publishes sensor activity and online status
 
 High-Level Architecture
-       ┌──────────────────────┐
-       │         JMRI         │
-       │  (Turnouts, Masts,   │
-       │   Sensors, Memory)   │
-       └─────────┬────────────┘
-                 │ MQTT (JSON Setup + Aspect Changes)
-                 ▼
-        ┌─────────────────────┐
-        │    Mosquitto MQTT   │
-        │     Broker/Pi       │
-        └─────────┬───────────┘
-                  │
-     ┌────────────┴────────────┐
-     │                         │
-┌──────────┐            ┌──────────┐
-│ Arduino  │ WiFi/AT    │ Arduino  │ WiFi/AT
-│   Mega   ├────────────┤   Mega   ├──────────…
-└──────────┘            └──────────┘
-     │ PCA9685               │ PCA9685
-     ▼                       ▼
-Turnouts / Sensors / Signals / Masts / Feathers
+
+              ┌──────────────────────┐
+              │         JMRI         │
+              │  (Turnouts, Masts,   │
+              │   Sensors, Memory)   │
+              └─────────┬────────────┘
+                        │ MQTT (JSON Setup + Aspect Changes)
+                        ▼
+               ┌─────────────────────┐
+               │    Mosquitto MQTT   │
+               │     Broker/Pi       │
+               └─────────┬───────────┘
+                         │
+            ┌────────────┴────────────┐
+       ┌──────────┐            ┌──────────┐
+       │ Arduino  │ WiFi/AT    │ Arduino  │ WiFi/AT
+       │   Mega   ├────────────┤   Mega   ├──────────
+       └──────────┘            └──────────┘
+            │ PCA9685               │ PCA9685
+            ▼                       ▼
+       Turnouts / Sensors / Signals / Masts / Feathers
+
 
 Hardware Requirements
 Required
