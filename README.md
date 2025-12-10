@@ -145,6 +145,7 @@ The only setting configured on the Arduino is:
 JMRI sends JSON with "B":"0" so the board knows which items apply to it.
 
 Turnout Setup
+
 Example (Memory Variable: B10:T1)
 {"type":"turnout","turnout":"B10:T1",
  "setup":[{"B":"0","D":"0","P":"1","T":"0","Tv":"1500","Cv":"2000"}]}
@@ -158,7 +159,10 @@ P	PCA channel (0–15)
 T	Turnout index for class array (0–15)
 Tv	Thrown PWM
 Cv	Closed PWM
+
+
 Sensor Setup
+
 Example
 {"type":"sensor","sensor":"PD2",
  "setup":[{"B":"0","P":"31","I":"0","S":"9"}]}
@@ -179,6 +183,7 @@ Cv = ON brightness
 Tv = OFF brightness
 
 Signal Mast Setup (with Feathers)
+
 Example (Memory Variable: SM1)
 {
   "type": "signalMast",
