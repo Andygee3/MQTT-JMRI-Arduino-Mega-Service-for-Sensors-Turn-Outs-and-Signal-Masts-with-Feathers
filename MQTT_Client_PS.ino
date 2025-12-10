@@ -42,7 +42,7 @@ Adafruit_PWMServoDriver pwm1;
 
 #if NumberOfRFIDReaders > 0
 RFIDOutput TagReaders[NumberOfRFIDReaders] = {
-  RFIDOutput(Serial2, "bayplatform"),
+  RFIDOutput(Serial2, "platform"),
 };
 #endif
 
