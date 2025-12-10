@@ -285,3 +285,24 @@ Fully remote board configuration via JSON
 Advanced flashing aspects
 
 Multiple boards on one layout
+
+
+# JMRI Script to Send Memories to MQTT
+
+    import jmri
+    import java
+      from org.python.core.util import StringUtil
+
+      memories = jmri.InstanceManager.getDefault(jmri.MemoryManager)
+
+      mqttAdapter = jmri.InstanceManager.getDefault(jmri.jmrix.mqtt.MqttSystemConnectionMemo).getMqttAdapter()
+
+      for memory in memories.getNamedBeanSet():
+        if memory.getSystemName() not in ["IMRATEFACTOR", "IMCURRENTTIME"]:
+        topic = "turnout/setup/"  
+        mem = memory.getValue()
+        memName = memory.getUserName()
+        
+        if memName and mem:  # Ensure values are not None
+            topic += memName
+            mqttAdapter.publish(topic, str(mem))  # Convert to string before publishing
